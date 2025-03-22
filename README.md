@@ -1,6 +1,6 @@
 # AI-LearningLog
 
-## Notes1
+## 在开源信息引导帮助下进行的一些操作
 1. **张量核心操作**
    - GPU张量创建与矩阵运算
    - 自动微分机制（`requires_grad`与`backward()`）
