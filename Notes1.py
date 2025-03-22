@@ -1,6 +1,6 @@
 # AI 学习笔记：从张量操作到深度学习模型训练
 
-# --- 1. 张量（Tensor）操作 ---
+# 1. 张量（Tensor）操作
 # 张量是 PyTorch 中的核心数据结构，可以看作是多维数组。
 
 import torch
@@ -18,7 +18,7 @@ loss = z.sum()  # 定义损失函数
 loss.backward()  # 反向传播计算梯度
 print(w.grad)  # 打印梯度
 
-# --- 2. 数据加载与预处理 ---
+# 2.数据加载与预处理
 # 在深度学习中，数据加载和预处理是非常重要的步骤。
 
 from torchvision import datasets, transforms
@@ -59,7 +59,7 @@ class CatDogDataset(torch.utils.data.Dataset):
             image = self.transform(image)
         return image, label
 
-# --- 3. 数据可视化 ---
+# 3.数据可视化
 # 在训练模型之前，可以通过可视化检查数据是否正确加载。
 
 import matplotlib.pyplot as plt
@@ -79,7 +79,7 @@ for i in range(5):
     axes[i].axis("off")
 plt.show()
 
-# --- 4. 深度学习模型：LeNet-5 ---
+# 4.深度学习模型：LeNet-5
 # LeNet-5 是一个经典的卷积神经网络，用于图像分类任务。
 
 import torch.nn as nn
@@ -103,7 +103,7 @@ class LeNet5(nn.Module):
         x = self.fc3(x)  # 输出层
         return x
 
-# --- 5. 模型训练 ---
+# 5. 模型训练
 # 训练流程包括定义模型、损失函数、优化器，以及训练循环。
 
 # 定义模型
@@ -131,16 +131,10 @@ for epoch in range(10):  # 训练 10 个 epoch
             print(f'Epoch {epoch+1}, Batch {i+1}, Loss: {running_loss/100:.3f}')
             running_loss = 0.0
 
-# --- 6. 总结 ---
+# 6. 总结
 # 学到的知识点：
 # 1. 张量操作：张量的创建、运算和自动求导。
 # 2. 数据加载与预处理：使用内置数据集、自定义数据集类、DataLoader 批量加载数据。
 # 3. 数据可视化：使用 matplotlib 显示图片和标签。
 # 4. 深度学习模型：定义卷积神经网络（LeNet-5），理解卷积层、池化层和全连接层的作用。
 # 5. 模型训练：定义损失函数和优化器，训练循环包括前向传播、反向传播和参数更新。
-
-# 下一步学习方向：
-# 1. 模型评估：如何在测试集上评估模型性能，使用准确率、混淆矩阵等指标。
-# 2. 超参数调优：调整学习率、批量大小等超参数。
-# 3. 迁移学习：使用预训练模型解决复杂任务。
-# 4. 更多深度学习模型：学习 ResNet、VGG 等更复杂的网络结构。
